@@ -10,6 +10,6 @@ FROM openjdk:17-alpine
 
 COPY --from=builder /src/target/tibber-meter-uploader-1.0.0-SNAPSHOT.jar /tibber-meter-uploader-1.0.0-SNAPSHOT.jar
 
-RUN apk add --no-cache curl jq bash
+RUN apk add --no-cache curl jq bash coreutils
 
 CMD /tibber-meter-uploader-1.0.0-SNAPSHOT.jar

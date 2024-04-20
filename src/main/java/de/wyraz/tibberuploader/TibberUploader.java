@@ -36,7 +36,7 @@ public class TibberUploader implements CommandLineRunner {
 
 	@Value("${dryRun}")
 	protected boolean dryRun;
-	
+
 	@Override
 	public void run(String... args) throws Exception {
 		CommandLineArgsHolder.commandLineArgs = args;
@@ -49,7 +49,7 @@ public class TibberUploader implements CommandLineRunner {
 		LocalDate today = LocalDate.now();
 		LocalDate startDate = today.minusDays(30);
 
-		AccountInfo info = tibberApi.getAccoutInfo(startDate, today.plusDays(1));
+		AccountInfo info = tibberApi.getAccountInfo(startDate, today.plusDays(1));
 
 		Entry<LocalDate, Integer> lastEntry = null;
 		if (info.getReadings() == null || info.getReadings().isEmpty()) {
